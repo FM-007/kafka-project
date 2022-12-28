@@ -10,11 +10,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.kafka.core.KafkaAdmin;
 
-@RequiredArgsConstructor // Cria um construtor e injeta a dependencia do KafkaProperties
+@RequiredArgsConstructor
 @Configuration
 public class KafkaAdminConfig {
 
-    public final KafkaProperties kafkaProperties;
+    private final KafkaProperties kafkaProperties;
 
     @Bean
     public KafkaAdmin kafkaAdmin() {
