@@ -10,11 +10,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class StrConsumerListener {
 
-    @SneakyThrows
+//    @SneakyThrows
     @StrConsumerCustomListener(groupId = "group-1")
     public void create(String message) {
         log.info("CREATE ::: Receive message {}", message);
-        throw new IllegalArgumentException("Exception ...");
+//        throw new IllegalArgumentException("Exception ...");
     }
 
     @StrConsumerCustomListener(groupId = "group-1")
@@ -22,7 +22,7 @@ public class StrConsumerListener {
         log.info("LOG ::: Receive message {}", message);
     }
 
-    @KafkaListener(groupId = "group-2", topics = "str-topics", containerFactory = "validMessageConsumerFactory")
+    @KafkaListener(groupId = "group-2", topics = "str-topic", containerFactory = "validMessageConsumerFactory")
     public void history(String message) {
         log.info("HISTORY ::: Receive message {}", message);
     }

@@ -60,7 +60,7 @@ public class StringConsumerConfig {
 
         return (record, consumer) -> {
             if (record.value().contains("Test")) {
-                log.info("Possui a palavra teste");
+                log.info("Possui a palavra test");
                 return record;
             }
             return record;
