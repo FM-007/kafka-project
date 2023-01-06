@@ -14,7 +14,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 public @interface StrConsumerCustomListener {
 
     @AliasFor(annotation = KafkaListener.class, attribute = "topics")
-    String[] topics() default "str-topic";
+    String[] topics() default "str-topics";
 
     @AliasFor(annotation = KafkaListener.class, attribute = "containerFactory")
     String containerFactory() default "strConsumerFactory";
